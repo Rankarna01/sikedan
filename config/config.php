@@ -6,8 +6,8 @@
 // Path absolut ke root aplikasi
 define('ROOT_PATH', dirname(__DIR__));
 
-// Domain & URL Hosting Anda di Hostinger
-define('HOSTING_URL', 'https://firebrick-dog-967571.hostingersite.com');
+// Domain & URL Hosting Anda
+define('HOSTING_URL', 'http://sikedan.site');
 
 // Deteksi Host & Environment
 $httpHost = $_SERVER['HTTP_HOST'] ?? 'localhost';
@@ -46,12 +46,13 @@ if (!empty($docRoot) && str_starts_with($appRoot, $docRoot)) {
 
 // Penentuan BASE_URL:
 // - Jika di Localhost: otomatis deteksi URL lokal (contoh: http://localhost/sikedan)
-// - Jika di Hosting: langsung terhubung ke HOSTING_URL (https://firebrick-dog-967571.hostingersite.com)
+// - Jika di Hosting: otomatis gunakan protokol aktif + host yang diakses, atau default ke HOSTING_URL
 if ($isLocal) {
     $localUrl = rtrim($protocol . $httpHost . $subDir, '/');
     define('BASE_URL', getenv('APP_URL') ?: ($localUrl ?: 'http://localhost/sikedan'));
 } else {
-    define('BASE_URL', getenv('APP_URL') ?: HOSTING_URL);
+    $hostingBase = !empty($httpHost) ? rtrim($protocol . $httpHost . $subDir, '/') : HOSTING_URL;
+    define('BASE_URL', getenv('APP_URL') ?: $hostingBase);
 }
 
 // Path upload
