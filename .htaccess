@@ -1,0 +1,13 @@
+# SiKedan - Apache configuration
+# Aktif otomatis saat aplikasi berjalan di Apache (XAMPP/cPanel)
+
+# (Opsional) Aktifkan baris di bawah dan sesuaikan path jika ingin halaman 404 kustom aktif di level server:
+# ErrorDocument 404 /sikedan/404.php
+
+# Cegah directory listing
+Options -Indexes
+
+# Lindungi file konfigurasi & SQL agar tidak bisa diakses langsung via URL
+<FilesMatch "\.(sql|md)$">
+    Require all denied
+</FilesMatch>

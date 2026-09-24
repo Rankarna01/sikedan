@@ -1,0 +1,5 @@
+question_text,question_type,score,option_a,option_b,option_c,option_d,correct
+Apa kepanjangan dari AI?,multiple_choice,10,Artificial Intelligence,Automatic Internet,Advanced Interface,Applied Informatics,a
+Manakah yang termasuk platform AI generatif untuk video? (boleh lebih dari satu),multiple_answer,10,CapCut AI,Microsoft Word,Runway,Notepad,"a,c"
+AI dapat membantu membuat storyboard video pembelajaran.,true_false,10,,,,,true
+Jelaskan manfaat AI dalam pembuatan video pembelajaran menurut pemahaman Anda.,essay,20,,,,,

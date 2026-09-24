@@ -1,0 +1,16 @@
+# Mencegah file PHP yang mungkin diselundupkan lewat upload untuk dieksekusi sebagai script.
+# Penting untuk keamanan karena folder ini menerima upload dari admin & peserta.
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|pht|phar)$">
+    Require all denied
+</FilesMatch>
